@@ -8,19 +8,27 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/valentimaraujo/dasa-health.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
-
-# Vá para a pasta server
-$ cd server
+$ cd dasa-health
 
 # Instale as dependências
 $ npm install
 
+# Copie o arquivo .env.example e cole com o nome .env
+$ cp .env.exemple .env
+
+# Configure o arquivo .env com os dados da sua conexão de bando de dados
+
+# Criando as tabelas e usuário principal de acesso(e-mail: dasa-health@dasahealth.com senha: secret)
+$ npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all
+
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev:server
 
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+# A documentação dos endpoits inciará em <http://localhost:3000/api-docs>
+
 ```
+Para facilitar nos teste, existe um aquivo json chamado `dasa-health-insomnia-endpoints.json` na raíz do projeto que contem todos os endpoints de testes, ele é uma arquivo que pode ser importado e usado no programa [Insomnia](https://insomnia.rest/download/).

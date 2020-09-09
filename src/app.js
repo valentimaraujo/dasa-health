@@ -50,6 +50,7 @@ class AppController {
   }
 
   routes() {
+    this.express.use('/', (req, res) => res.json({ message: 'Welcome to Dasa Health API', version: '1.0.0' }));
     this.express.use('/api/v1', routesApp);
   }
 
